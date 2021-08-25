@@ -1,0 +1,36 @@
+# Coin distribution problem.
+
+n = int(input())
+
+if n >= 5:
+    fives = (n - 4) // 5
+    remaining_amount1 = n - (5 * fives)
+    
+    if remaining_amount1 % 2 == 0:
+        ones = 2
+    else:
+        ones = 1
+        
+    twos = (n - (5 * fives) - (1 * ones)) // 2
+
+elif n < 5 and n >= 2:
+    fives = 0
+    if n % 2 == 0:
+        ones = 2
+    else:
+        ones = 1
+  
+    twos = (n - (ones * 1)) // 2
+    
+else:
+    fives = 0
+    twos = 0
+    if n == 1:
+        ones = 1
+    else:
+        ones = 0
+
+
+print((fives + twos + ones), end=' ')
+print(fives,twos,ones)
+    
